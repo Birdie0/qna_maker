@@ -1,6 +1,10 @@
 # QnAMaker
 
-API wrapper for [QnA Maker](https://qnamaker.ai) 
+![Gem](https://img.shields.io/gem/dv/qna_maker/stable.svg)
+[![Build Status](https://travis-ci.org/Birdie0/qna_maker.svg?branch=master)](https://travis-ci.org/Birdie0/qna_maker)
+[![Maintainability](https://api.codeclimate.com/v1/badges/96bf3ebcfe21cd1b9359/maintainability)](https://codeclimate.com/github/Birdie0/qna_maker/maintainability)
+
+API wrapper for [QnA Maker](https://qnamaker.ai)
 
 ## Installation
 
@@ -24,13 +28,13 @@ Or install it yourself as:
 require 'qna_maker'
 
 client = QnAMaker::Client.new('kb_id' , 'subscription_key')
-# => #<QnAMaker::Client @knowledgebase_id="kb_id", @subscription_key="subscription_key", ...>
+#=> #<QnAMaker::Client @knowledgebase_id="kb_id", @subscription_key="subscription_key", ...>
 
 answers = client.generate_answer('hi')
-# => [#<QnAMaker::Answer @answer="hello", @questions=["hi"], @score=100.0>]
+#=> [#<QnAMaker::Answer @answer="hello", @questions=["hi"], @score=100.0>]
 
-puts answers.first.answer
-# => hello
+answers.first.answer
+#=> "hello"
 ```
 
 ## Development status
@@ -39,16 +43,16 @@ Gem is under active development! It isn't finished yet!
 
 ### Todo list
 
-* [ ] Methods
+* [x] Methods
   * [x] **POST** - Create Knowledge Base
   * [x] **DELETE** - Delete Knowledge Base
   * [x] **GET** - Download Alterations
   * [x] **GET** - Download Knowledge Base
   * [x] **POST** - Generate answer
   * [x] **PUT** - Publish Knowledge Base
-  * [ ] **PATCH** - Train Knowledge Base
-  * [ ] **PATCH** - Update Alterations
-  * [ ] **PATCH** - Update Knowledge Base
+  * [x] **PATCH** - Train Knowledge Base
+  * [x] **PATCH** - Update Alterations
+  * [x] **PATCH** - Update Knowledge Base
 * [ ] Documentation
 * [ ] Tests
 

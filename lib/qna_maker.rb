@@ -11,9 +11,9 @@ require 'qna_maker/endpoints/download_alterations'
 require 'qna_maker/endpoints/download_kb'
 require 'qna_maker/endpoints/generate_answer'
 require 'qna_maker/endpoints/publish_kb'
-# require 'qna_maker/endpoints/train_kb'
-# require 'qna_maker/endpoints/update_kb'
-# require 'qna_maker/endpoints/update_alterations'
+require 'qna_maker/endpoints/train_kb'
+require 'qna_maker/endpoints/update_kb'
+require 'qna_maker/endpoints/update_alterations'
 
 require 'http'
 

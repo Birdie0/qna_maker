@@ -13,13 +13,13 @@ module QnAMaker
       when 401
         raise UnauthorizedError, response.parse['error']['message']
       when 403
-        raise QuotaExceededError, response.parse['error']['message'].join(' ')
+        raise ForbiddenError, response.parse['error']['message']
       when 404
-        raise NotFoundError, response.parse['error']['message'].join(' ')
+        raise NotFoundError, response.parse['error']['message']
       when 409
-        raise ConflictError, response.parse['error']['message'].join(' ')
+        raise ConflictError, response.parse['error']['message']
       else
-        raise UnknownError, 'Oh no!'
+        raise UnknownError, "Oh no! (#{response.code})"
       end
     end
 
@@ -36,13 +36,13 @@ module QnAMaker
       when 401
         raise UnauthorizedError, response.parse['error']['message']
       when 403
-        raise QuotaExceededError, response.parse['error']['message'].join(' ')
+        raise ForbiddenError, response.parse['error']['message']
       when 404
-        raise NotFoundError, response.parse['error']['message'].join(' ')
+        raise NotFoundError, response.parse['error']['message']
       when 409
-        raise ConflictError, response.parse['error']['message'].join(' ')
+        raise ConflictError, response.parse['error']['message']
       else
-        raise UnknownError, 'Oh no!'
+        raise UnknownError, "Oh no! (#{response.code})"
       end
     end
   end

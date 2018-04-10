@@ -1,18 +1,14 @@
 module QnAMaker
   class Client
-    def download_alterations
-      response = @http.get(
-        "#{BASE_URL}/#{@knowledgebase_id}/downloadAlterations"
+    def update_alterations(add = [], delete = [])
+      response = @http.patch(
+        "#{BASE_URL}/#{@knowledgebase_id}/updateAlterations",
+        json: { add: add, delete: delete }
       )
 
       case response.code
-      when 200
-        response.parse['wordAlterations'].map do |alteration|
-          Alteration.new(
-            alteration['word'].normalize,
-            alteration['alterations'].map(&:normalize)
-          )
-        end
+      when 204
+        nil
       when 400
         raise BadArgumentError, response.parse['error']['message'].join(' ')
       when 401
@@ -21,6 +17,8 @@ module QnAMaker
         raise ForbiddenError, response.parse['error']['message']
       when 404
         raise NotFoundError, response.parse['error']['message']
+      when 409
+        raise ConflictError, response.parse['error']['message']
       else
         raise UnknownError, "Oh no! (#{response.code})"
       end

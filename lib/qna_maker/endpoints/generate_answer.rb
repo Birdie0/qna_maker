@@ -20,15 +20,15 @@ module QnAMaker
       when 401
         raise UnauthorizedError, response.parse['error']['message']
       when 403
-        raise QuotaExceededError, response.parse['error']['message'].join(' ')
+        raise QuotaExceededError, response.parse['error']['message']
       when 404
-        raise NotFoundError, response.parse['error']['message'].join(' ')
+        raise NotFoundError, response.parse['error']['message']
       when 408
-        raise OperationTimeOutError, response.parse['error']['message'].join(' ')
+        raise OperationTimeOutError, response.parse['error']['message']
       when 429
-        raise RateLimitExceededError, response.parse['error']['message'].join(' ')
+        raise RateLimitExceededError, response.parse['error']['message']
       else
-        raise UnknownError, 'Oh no!'
+        raise UnknownError, "Oh no! (#{response.code})"
       end
     end
   end

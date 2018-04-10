@@ -1,3 +1,5 @@
 # Disable all metrics.
 Metrics:
   Enabled: false
+Style/Documentation:
+  Enabled: false

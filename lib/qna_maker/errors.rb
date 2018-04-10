@@ -20,6 +20,9 @@ module QnAMaker
   class ConflictError < StandardError
   end
 
+  class ForbiddenError < StandardError
+  end
+
   class UnknownError < StandardError
   end
 end

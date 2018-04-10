@@ -22,7 +22,7 @@ module QnAMaker
       when 401
         raise UnauthorizedError, response.parse['error']['message']
       else
-        raise UnknownError, 'Oh no!'
+        raise UnknownError, "Oh no! (#{response.code})"
       end
     end
 
@@ -48,7 +48,7 @@ module QnAMaker
       when 401
         raise UnauthorizedError, response.parse['error']['message']
       else
-        raise UnknownError, 'Oh no!'
+        raise UnknownError, "Oh no! (#{response.code})"
       end
     end
   end
