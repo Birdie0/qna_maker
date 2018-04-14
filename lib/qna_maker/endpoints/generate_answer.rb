@@ -1,5 +1,16 @@
 module QnAMaker
   class Client
+    #
+    # Returns the list of answers for the given question sorted in descending
+    # order of ranking score.
+    #
+    # @param [String] question user question to be queried against your
+    #   knowledge base.
+    # @param [Integer] top number of ranked results you want in the output.
+    #
+    # @return [Array<Answer>] list of answers for the user query sorted in
+    #   decreasing order of ranking score.
+    #
     def generate_answer(question, top = 1)
       response = @http.post(
         "#{BASE_URL}/#{@knowledgebase_id}/generateAnswer",

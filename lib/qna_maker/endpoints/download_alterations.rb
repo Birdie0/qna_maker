@@ -1,5 +1,11 @@
 module QnAMaker
   class Client
+    #
+    # Downloads all word alterations (synonyms) that have been automatically
+    #   mined or added by the user.
+    #
+    # @return [Array<Alteration>] list of alterations
+    #
     def download_alterations
       response = @http.get(
         "#{BASE_URL}/#{@knowledgebase_id}/downloadAlterations"

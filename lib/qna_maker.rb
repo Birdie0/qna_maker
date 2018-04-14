@@ -18,11 +18,30 @@ require 'qna_maker/endpoints/update_alterations'
 require 'http'
 
 module QnAMaker
+  #
+  # Client instance
+  #
   class Client
     BASE_URL = 'https://westus.api.cognitive.microsoft.com/QnAMaker/v2.0/knowledgebases'.freeze
 
-    attr_reader :knowledgebase_id, :subscription_key, :data_extraction_results
+    # @!attribute [r] knowledgebase_id
+    #   @return [String]
+    attr_reader :knowledgebase_id
+    # @!attribute [r] subscription_key
+    #   @return [String]
+    attr_reader :subscription_key
+    # @!attribute [r] data_extraction_results
+    #   @return [Array<String>]
+    attr_reader :data_extraction_results
 
+    #
+    # <Description>
+    #
+    # @param [String] knowledgebase_id this should be get from QnAMaker portal
+    # @param [String] subscription_key QnAMaker::Client provides access to
+    #   this API. Found in your QnAMaker Service accounts (https://qnamaker.ai
+    # @param [Array<Hash{String => String, String => String, String => String}>] data_extraction_results ata extraction results.
+    #
     def initialize(knowledgebase_id, subscription_key, data_extraction_results = [])
       @knowledgebase_id = knowledgebase_id
       @subscription_key = subscription_key

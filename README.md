@@ -1,10 +1,13 @@
 # QnAMaker
 
-![Gem](https://img.shields.io/gem/dv/qna_maker/stable.svg)
+![Gem](https://img.shields.io/gem/v/qna_maker.svg)
+![Gem](https://img.shields.io/gem/dt/qna_maker.svg)
 [![Build Status](https://travis-ci.org/Birdie0/qna_maker.svg?branch=master)](https://travis-ci.org/Birdie0/qna_maker)
 [![Maintainability](https://api.codeclimate.com/v1/badges/96bf3ebcfe21cd1b9359/maintainability)](https://codeclimate.com/github/Birdie0/qna_maker/maintainability)
 
 API wrapper for [QnA Maker](https://qnamaker.ai)
+
+## [QnA API docs](https://westus.dev.cognitive.microsoft.com/docs/services/58994a073d9e04097c7ba6fe)
 
 ## Installation
 
@@ -53,7 +56,7 @@ Gem is under active development! It isn't finished yet!
   * [x] **PATCH** - Train Knowledge Base
   * [x] **PATCH** - Update Alterations
   * [x] **PATCH** - Update Knowledge Base
-* [ ] Documentation
+* [x] Documentation
 * [ ] Tests
 
 ## Development

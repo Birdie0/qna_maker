@@ -1,5 +1,10 @@
 module QnAMaker
   class Client
+    #
+    # Deletes the current knowledge base and all data associated with it.
+    #
+    # @return [nil] on success
+    #
     def delete_kb
       response = @http.delete(
         "#{BASE_URL}/#{knowledgebase_id}"
@@ -23,6 +28,15 @@ module QnAMaker
       end
     end
 
+    #
+    # Deletes the specified knowledge base and all data associated with it.
+    #
+    # @param [String] knowledgebase_id knowledge base identity
+    # @param [String] subscription_key Subscription key which provides access to
+    #   this API. Found in your QnAMaker Service accounts (https://qnamaker.ai)
+    #
+    # @return [nil] on success
+    #
     def self.delete_kb(knowledgebase_id, subscription_key)
       response = HTTP.headers('Ocp-Apim-Subscription-Key' => subscription_key).delete(
         "#{BASE_URL}/#{knowledgebase_id}"

@@ -1,9 +1,18 @@
 module QnAMaker
   class Client
+    #
+    # Replaces word alterations (synonyms) for the KB with the give records.
+    #
+    # @param [Array(String, Array<String>)] add word alterations to be added
+    # @param [Array(String, Array<String>)] delete word alterations to be removed
+    #
+    # @return [nil] on success
+    #
     def update_alterations(add = [], delete = [])
       response = @http.patch(
         "#{BASE_URL}/#{@knowledgebase_id}/updateAlterations",
-        json: { add: add, delete: delete }
+        json: { add: add.map {|i| {word: i[0], alterations: i[1]} },
+        delete: delete.map {|i| {word: i[0], alterations: i[1]} } }
       )
 
       case response.code

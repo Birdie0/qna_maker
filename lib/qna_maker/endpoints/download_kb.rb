@@ -1,5 +1,10 @@
 module QnAMaker
   class Client
+    #
+    # Downloads all the data associated with the specified knowledge base
+    #
+    # @return [String] SAS url (valid for 30 mins) to tsv file in blob storage
+    #
     def download_kb
       response = @http.get(
         "#{BASE_URL}/#{@knowledgebase_id}"

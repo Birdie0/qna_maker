@@ -1,5 +1,10 @@
 module QnAMaker
   class Client
+    #
+    # Publish all unpublished in the knowledgebase to the prod endpoint
+    #
+    # @return [nil] on success
+    #
     def publish_kb
       response = @http.put(
         "#{BASE_URL}/#{@knowledgebase_id}"

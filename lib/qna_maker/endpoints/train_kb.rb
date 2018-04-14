@@ -1,5 +1,16 @@
 module QnAMaker
   class Client
+    #
+    # The developer of the knowledge base service can use this API to submit
+    # user feedback for tuning question-answer matching. QnA Maker uses active
+    # learning to learn from the user utterances that come on a published
+    # Knowledge base service.
+    #
+    # @param [Array<Array(String, String, String, String)>] feedback_records
+    #   \[user_id, user_question, kb_question, kb_answer]
+    #
+    # @return [nil] on success
+    #
     def train_kb(feedback_records = [])
       feedback_records = feedback_records.map do |record|
         { userId: record[0],

@@ -1,28 +1,31 @@
 module QnAMaker
-  class BadArgumentError < StandardError
+  class Error < StandardError
   end
 
-  class NotFoundError < StandardError
+  class BadArgumentError < Error
   end
 
-  class UnauthorizedError < StandardError
+  class NotFoundError < Error
   end
 
-  class QuotaExceededError < StandardError
+  class UnauthorizedError < Error
   end
 
-  class OperationTimeOutError < StandardError
+  class QuotaExceededError < Error
   end
 
-  class RateLimitExceededError < StandardError
+  class OperationTimeOutError < Error
   end
 
-  class ConflictError < StandardError
+  class RateLimitExceededError < Error
   end
 
-  class ForbiddenError < StandardError
+  class ConflictError < Error
   end
 
-  class UnknownError < StandardError
+  class ForbiddenError < Error
+  end
+
+  class UnknownError < Error
   end
 end
