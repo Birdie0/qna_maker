@@ -1,9 +1,10 @@
 # QnAMaker
 
-![Gem](https://img.shields.io/gem/v/qna_maker.svg)
-![Gem](https://img.shields.io/gem/dt/qna_maker.svg)
+[![Gem](https://img.shields.io/gem/v/qna_maker.svg)](https://rubygems.org/gems/qna_maker)
+[![Gem](https://img.shields.io/gem/dt/qna_maker.svg)](https://rubygems.org/gems/qna_maker)
 [![Build Status](https://travis-ci.org/Birdie0/qna_maker.svg?branch=master)](https://travis-ci.org/Birdie0/qna_maker)
-[![Maintainability](https://api.codeclimate.com/v1/badges/96bf3ebcfe21cd1b9359/maintainability)](https://codeclimate.com/github/Birdie0/qna_maker/maintainability)
+[![Inline docs](https://inch-ci.org/github/Birdie0/qna_maker.svg?branch=master&style=shields)](https://inch-ci.org/github/Birdie0/qna_maker)
+[![Maintainability](https://codeclimate.com/github/Birdie0/qna_maker/badges/gpa.svg)](https://codeclimate.com/github/Birdie0/qna_maker/maintainability)
 
 API wrapper for [QnA Maker](https://qnamaker.ai)
 
