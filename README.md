@@ -6,6 +6,8 @@
 [![Inline docs](https://inch-ci.org/github/Birdie0/qna_maker.svg?branch=master&style=shields)](https://inch-ci.org/github/Birdie0/qna_maker)
 [![Maintainability](https://codeclimate.com/github/Birdie0/qna_maker/badges/gpa.svg)](https://codeclimate.com/github/Birdie0/qna_maker/maintainability)
 
+:warning: **Repo is no longer maintained!** :warning:
+
 API wrapper for [QnA Maker](https://qnamaker.ai)
 
 ## [QnA API docs](https://westus.dev.cognitive.microsoft.com/docs/services/58994a073d9e04097c7ba6fe)
